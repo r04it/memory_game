@@ -132,14 +132,14 @@ def notPresent():
     with open(r"data\database\notpresent.txt","r") as file:
         content = file.read().split("\n")
         notPresentList = [
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
              ]
         start.config(state="normal")
         obj = present()
