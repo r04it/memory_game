@@ -35,27 +35,31 @@ def notPresent():
     with open(r"data\database\notpresent.txt","r") as file:
         content = file.read().split("\n")
         notPresentList = [
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
-            content[random.randint(0,35)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
+            content[random.randint(0,400)],
              ]
         obj = present()
 
         presentList,element = obj[0],obj[1]
-        print("\n Remember these names . You has only 10 sec to answer.\n")
-        for i in presentList:
-            print(i, end='---')
+        print("\nRemember these names . You have only 10 sec to answer.\n")
+        
+        for i in range(len(presentList)):
+            a=presentList[i]
+            print(a+(10-len(a))*" ", end="     ")
+            if ((i+1)%3==0):
+                print("\n")
+                    
         print("\n")
         notPresentList.insert(random.randint(0,8),element)
-        for i in range(10,0,-1):
-            print("--------->",i,"<----------\n\n\n\n\n")
-            time.sleep(1)
-            
+        time.sleep(10)
+        for i in range(10):
+            print("\n")
         return (notPresentList,element)
             
 score = 0
@@ -72,10 +76,13 @@ while True:
     obj = notPresent()
     notPresentList,element = obj[0],obj[1]
 
-    for i in notPresentList:
-        print(i,end="---")
-
-    print('\n')
+    for i in range(len(notPresentList)):
+        a=notPresentList[i]
+        print(a+(10-len(a))*" ", end="     ")
+        if ((i+1)%3==0):
+            print("\n")
+    for i in range(5):
+        print("\n")
         
     word = input("\n\n Which word is common in both lists:")
         
@@ -88,6 +95,8 @@ while True:
 
     ch = input("Do you want to continue(y/n):")
     if ch != "y":
+        
         print("high score till now is:",highScore(score))
+        time.sleep(5)
         break
         
